@@ -183,7 +183,7 @@ const Wishlist = () => {
     setIsFavorite(!isFavorite);
   };
   return (
-    <TouchableOpacity onPress={pressed}>
+    <TouchableOpacity onPress={pressed} activeOpacity={1}>
       <View style={styles.heart}>
         {!isFavorite && <Heart />}
         {/* {isFavorite && (
