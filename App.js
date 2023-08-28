@@ -186,14 +186,15 @@ const Wishlist = () => {
     <TouchableOpacity onPress={pressed}>
       <View style={styles.heart}>
         {!isFavorite && <Heart />}
-        {/* {isFavorite && (
+        {isFavorite && (
           <LottieView
             source={require('./assets/heartAnimation.json')}
-            autoPlay={false}
+            autoPlay
             loop={false}
+            style={styles.FillHeartInner}
           />
-        )} */}
-        {isFavorite && <FillHeart />}
+        )}
+        {/* {isFavorite && <FillHeart />} */}
       </View>
     </TouchableOpacity>
   );
@@ -257,6 +258,7 @@ const styles = StyleSheet.create({
   cards: {
     flex: 0.5,
     margin: 10,
+    marginTop: 0,
     borderRadius: 15,
     borderColor: Color.borderGray,
     borderWidth: 1,
@@ -265,8 +267,17 @@ const styles = StyleSheet.create({
   heart: {
     flexDirection: 'row',
     justifyContent: 'flex-end',
-    padding: 15,
-    paddingBottom: 2,
+    paddingTop: 10,
+    paddingRight: 15,
+    marginBottom: 10,
+  },
+  FillHeartInner: {
+    position: 'relative',
+    left: 2,
+    height: 50,
+    width: 50,
+    paddingTop: 10,
+    paddingRight: 15,
   },
   cardHeading: {
     fontSize: 16,
@@ -286,7 +297,6 @@ const styles = StyleSheet.create({
     paddingBottom: 0,
   },
   shoes: {
-    flex: 1,
     paddingHorizontal: 15,
   },
   cardText: {
